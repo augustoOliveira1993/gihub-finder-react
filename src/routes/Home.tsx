@@ -19,7 +19,6 @@ export const Home = () => {
                 return response.json()
             })
             .then((data) => {
-                setError(false)
                 const { avatar_url, login, location, followers, following } = data;
                 const userData: UserProps = {
                     avatar_url,
@@ -29,7 +28,11 @@ export const Home = () => {
                     following,
                 }
                 setUser(userData)
-            });
+            })
+            .catch((error) => {
+                setError(true)
+
+            })
 
     }
     return (

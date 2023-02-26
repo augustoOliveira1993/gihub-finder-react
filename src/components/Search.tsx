@@ -23,7 +23,7 @@ export const Search = ({ loadUser }: SearchProps) => {
                     type="text"
                     placeholder="Digite o nome do usuário"
                     onChange={(e) => setUsername(e.target.value)}
-                    onKeyDown={(e) => hadnleKeyDown}
+                    onKeyDown={(e) => hadnleKeyDown(e)}
                 />
                 <button onClick={() => loadUser(username)}>
                     <BsSearch/>
